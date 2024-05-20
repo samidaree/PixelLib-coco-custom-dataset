@@ -58,10 +58,10 @@ class instance_custom_training:
         labelme_folder1 = os.path.abspath(os.path.join(dataset, "train"))
 
         #dir where the converted json files will be saved
-        save_json_path1 = os.path.abspath(os.path.join(dataset, "train.json"))
+        save_json_path1 = os.path.abspath(os.path.join(dataset, "train/_annotations.coco.json"))
         
         #conversion of individual labelme json files into a single json file        
-        labelme2coco.convert(labelme_folder1, save_json_path1)
+        #labelme2coco.convert(labelme_folder1, save_json_path1)
         
         # Training dataset.
         self.dataset_train = Data()
@@ -69,14 +69,14 @@ class instance_custom_training:
         self.dataset_train.prepare()
         
         
-        labelme_folder2 = os.path.abspath(os.path.join(dataset, "test"))
+        labelme_folder2 = os.path.abspath(os.path.join(dataset, "valid"))
 
         #dir where the converted json files will be saved
-        save_json_path2 = os.path.abspath(os.path.join(dataset, "test.json"))
+        save_json_path2 = os.path.abspath(os.path.join(dataset, "valid/_annotations.coco.json"))
         
         
         #conversion of individual labelme json files into a single json file  
-        labelme2coco.convert(labelme_folder2, save_json_path2)
+        #labelme2coco.convert(labelme_folder2, save_json_path2)
         
         # Training dataset.
         self.dataset_test = Data()
